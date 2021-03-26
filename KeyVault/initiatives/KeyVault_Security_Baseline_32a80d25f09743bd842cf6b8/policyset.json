@@ -1,0 +1,129 @@
+{
+ "properties": {
+  "displayName": "KeyVault Security Baseline",
+  "policyType": "Custom",
+  "description": "Baseline Exqample for Key Vault Security",
+  "metadata": {
+   "category": "Cosmic",
+   "parameterScopes": {
+    "logAnalytics": "/subscriptions/40206108-5e6d-40d6-b12f-8cc22a6bee36"
+   },
+   "createdBy": "5ed22e11-e504-49be-a453-da493fb877b5",
+   "createdOn": "2021-03-26T14:31:37.9939463Z",
+   "updatedBy": null,
+   "updatedOn": null
+  },
+  "parameters": {
+   "Workspace": {
+    "type": "String",
+    "metadata": {
+     "displayName": "Workspace",
+     "strongType": "Microsoft.OperationalInsights/workspaces"
+    }
+   }
+  },
+  "policyDefinitions": [
+   {
+    "policyDefinitionReferenceId": "Key vaults should have purge protection enabled_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/0b60c0b2-2dc2-4e1c-b5c9-abbed971de53",
+    "parameters": {},
+    "groupNames": [
+     "Recovery Protection"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Azure Defender for Key Vault should be enabled_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/0e6763cc-5078-4e64-889d-ff4d9a839047",
+    "parameters": {},
+    "groupNames": [
+     "Monitoring"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Key vaults should have soft delete enabled_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/1e66c121-a66a-4b1f-9b83-0fd99bf0fc2d",
+    "parameters": {},
+    "groupNames": [
+     "Recovery Protection"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "[Preview]: Firewall should be enabled on Key Vault_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/55615ac9-af46-4a59-874e-391cc3dfb490",
+    "parameters": {},
+    "groupNames": [
+     "Networking"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Deploy - Configure diagnostic settings for Azure Key Vault to Log Analytics workspace_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/951af2fa-529b-416e-ab6e-066fd85ac459",
+    "parameters": {
+     "logAnalytics": {
+      "value": "[parameters('Workspace')]"
+     }
+    },
+    "groupNames": [
+     "Monitoring"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Deploy Diagnostic Settings for Key Vault to Log Analytics workspace_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/bef3f64c-5290-43b7-85b0-9b254eef4c47",
+    "parameters": {
+     "logAnalytics": {
+      "value": "[parameters('Workspace')]"
+     },
+     "metricsEnabled": {
+      "value": "True"
+     }
+    },
+    "groupNames": [
+     "Monitoring"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Resource logs in Key Vault should be enabled_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/cf820ca0-f99e-4f3e-84fb-66e913812d21",
+    "parameters": {
+     "requiredRetentionDays": {
+      "value": "365"
+     }
+    },
+    "groupNames": [
+     "Monitoring"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Key Vault should use a virtual network service endpoint_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/ea4d6841-2173-4317-9747-ff522a45120f",
+    "parameters": {},
+    "groupNames": [
+     "Networking"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "[Preview]: Private endpoint should be configured for Key Vault_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/5f0bc445-3935-4915-9981-011aa2b46147",
+    "parameters": {},
+    "groupNames": [
+     "Networking"
+    ]
+   }
+  ],
+  "policyDefinitionGroups": [
+   {
+    "name": "Networking"
+   },
+   {
+    "name": "Monitoring"
+   },
+   {
+    "name": "Recovery Protection"
+   }
+  ]
+ },
+ "id": "/subscriptions/40206108-5e6d-40d6-b12f-8cc22a6bee36/providers/Microsoft.Authorization/policySetDefinitions/32a80d25f09743bd842cf6b8",
+ "type": "Microsoft.Authorization/policySetDefinitions",
+ "name": "32a80d25f09743bd842cf6b8"
+}
