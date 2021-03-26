@@ -10,14 +10,15 @@
    },
    "createdBy": "5ed22e11-e504-49be-a453-da493fb877b5",
    "createdOn": "2021-03-26T14:31:37.9939463Z",
-   "updatedBy": null,
-   "updatedOn": null
+   "updatedBy": "5ed22e11-e504-49be-a453-da493fb877b5",
+   "updatedOn": "2021-03-26T14:45:38.2819106Z"
   },
   "parameters": {
    "Workspace": {
     "type": "String",
     "metadata": {
      "displayName": "Workspace",
+     "description": null,
      "strongType": "Microsoft.OperationalInsights/workspaces"
     }
    }
@@ -53,18 +54,6 @@
     "parameters": {},
     "groupNames": [
      "Networking"
-    ]
-   },
-   {
-    "policyDefinitionReferenceId": "Deploy - Configure diagnostic settings for Azure Key Vault to Log Analytics workspace_1",
-    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/951af2fa-529b-416e-ab6e-066fd85ac459",
-    "parameters": {
-     "logAnalytics": {
-      "value": "[parameters('Workspace')]"
-     }
-    },
-    "groupNames": [
-     "Monitoring"
     ]
    },
    {
